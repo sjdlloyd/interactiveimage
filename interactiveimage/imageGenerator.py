@@ -40,7 +40,9 @@ class EventHandler:
             d.set_visible(False)
         # list(map(lambda d: d.set_visible(False), self.data))
         nearest = self.find_nearest(event.xdata, event.ydata)
-        nearest.set_visible(True)
+        # should have a check for the nearest one
+        if 100 > nearest.compare(event.xdata, event.ydata):
+            nearest.set_visible(True)
         xi, yi = (int(math.floor(n)) for n in (event.xdata, event.ydata))
         value = im[yi,xi]
         print([d.plot.get_visible() for d in self.data])
