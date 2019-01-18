@@ -4,8 +4,8 @@ import numpy as np
 import pandas as pd
 from PIL import Image
 from pathlib import Path
-SOURCE_PATH = Path('source.csv')
-IMG_PATH = Path('images')
+SOURCE_PATH = Path('../data/source.csv')
+IMG_PATH = Path('../data/images')
 df = pd.read_csv(SOURCE_PATH)
 fig, ax = plt.subplots(2)
 data = df[['x','y']].values
